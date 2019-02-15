@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XSM
 {
@@ -12,6 +7,12 @@ namespace XSM
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private async void btnDisplay_Click(object sender, System.EventArgs e)
+        {
+            var answer = await DisplayAlert("Key question", "Do you like Xam.Forms?", "Yay!", "Nope");
+            lbl_Answer.Text = answer ? "yay!" : "not that much...";
         }
     }
 }
