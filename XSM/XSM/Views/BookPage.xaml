@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XSM.Views.BookPage"
+             Title="Your dream book list">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Books}"
+                  BackgroundColor="White"
+                  SeparatorVisibility="Default"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="FillAndExpand"
+                  HasUnevenRows="True">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="6,4"
+                                     BackgroundColor="GhostWhite">
+                            <Label Text="{Binding Title}"
+                                   Margin="8"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"/>
+                            <Label Text="{Binding Author}"
+                                   Margin="8, 2, 8, 4"
+                                   FontSize="Small"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
