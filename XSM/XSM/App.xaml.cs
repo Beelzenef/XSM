@@ -1,18 +1,31 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XSM.Views;
+using XSM.Services;
+using XSM.ViewModels.Login;
+using XSM.ViewModels.Projects;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace XSM
 {
     public partial class App : Application
     {
+        public static INavigationService NavigationService { get; } = new NavigationService();
+
         public App()
         {
             InitializeComponent();
 
-            //MainPage = new MainPage();
-            MainPage = new BookPage();
+            MainPage = SetNavigations();
         }
+
+        private Page SetNavigations()
+        {
+            NavigationService.Configure(AppConstants.LoginPage, typeof(LoginPage));
+            NavigationService.Configure(AppConstants.ProjectsPage, typeof(ProjectsPage));
+            var mainPage = ((NavigationService)NavigationService).SetRootPage(AppConstants.LoginPage);
+
+            return mainPage;
+        }
+
     }
 }

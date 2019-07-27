@@ -1,16 +1,14 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XSM.ViewModels;
 
-namespace XSM.Views
+namespace XSM.ViewModels.Projects
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BookPage : ContentPage
+    public partial class ProjectsPage : ContentPage
     {
-        public BookPage()
+        public ProjectsPage()
         {
             InitializeComponent();
-            BindingContext = new BookViewModel();
         }
     }
 }

@@ -2,26 +2,20 @@
 using XSM.Data;
 using XSM.Models;
 using System.Linq;
+using XSM.ViewModels.Base;
 
-namespace XSM.ViewModels
+namespace XSM.ViewModels.Projects
 {
-    class BookViewModel
+    class ProjectsViewModel : BaseViewModel
     {
         private ObservableCollection<Book> _books;
-
         public ObservableCollection<Book> Books
         {
             get { return _books; }
-            set
-            {
-                if (value != _books)
-                {
-                    _books = value;
-                }
-            }
+            set { SetProperty(ref _books, value); }
         }
 
-        public BookViewModel()
+        public ProjectsViewModel()
         {
             Books = new ObservableCollection<Book>();
 
