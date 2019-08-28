@@ -3,35 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XSM.ViewModels.Projects.ProjectsPage"
              xmlns:vm="clr-namespace:XSM.ViewModels.Projects"
+             xmlns:views="clr-namespace:XSM.Views"
+             x:Name="this"
              Title="Projects">
     <ContentPage.BindingContext>
         <vm:ProjectsViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Books}"
-                  BackgroundColor="White"
-                  SeparatorVisibility="Default"
-                  HorizontalOptions="FillAndExpand"
-                  VerticalOptions="FillAndExpand"
-                  HasUnevenRows="True">
-
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Margin="6,4"
-                                     BackgroundColor="GhostWhite">
-                            <Label Text="{Binding Title}"
-                                   Margin="8"
-                                   FontAttributes="Bold"
-                                   FontSize="Medium"/>
-                            <Label Text="{Binding Author}"
-                                   Margin="8, 2, 8, 4"
-                                   FontSize="Small"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            
-        </ListView>
+            <ListView ItemsSource="{Binding Projects}"
+                      BackgroundColor="White"
+                      SeparatorVisibility="Default"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <views:BaseViewCell x:Name="cell"
+                            ParentContext="{Binding BindingContext,
+                            Source={x:Reference this}}">
+                            <StackLayout Margin="6,4"
+                                         BackgroundColor="GhostWhite">
+                                <Label Text="{Binding Title}"
+                                       Margin="8"
+                                       FontAttributes="Bold"
+                                       FontSize="Medium"/>
+                                <Label Text="{Binding Genre}"
+                                       Margin="8, 2, 8, 4"
+                                       FontSize="Small"/>
+                                <Button Command="{Binding ParentContext.GoToProjectCommand,
+                                    Source={x:Reference cell}}"
+                                    CommandParameter="{Binding .}"
+                                    Text="Select"/>
+                            </StackLayout>
+                        </views:BaseViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
     </ContentPage.Content>
 </ContentPage>

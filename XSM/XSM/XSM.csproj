@@ -17,5 +17,7 @@
     <Folder Include="ViewModels\Login\" />
     <Folder Include="ViewModels\Base\" />
     <Folder Include="Services\" />
+    <Folder Include="ViewModels\CreativeProjects\" />
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>

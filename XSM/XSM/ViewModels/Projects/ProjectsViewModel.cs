@@ -1,27 +1,45 @@
 ﻿using System.Collections.ObjectModel;
-using XSM.Data;
-using XSM.Models;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
+using XSM.Data;
+using XSM.Services;
 using XSM.ViewModels.Base;
 
 namespace XSM.ViewModels.Projects
 {
     class ProjectsViewModel : BaseViewModel
     {
-        private ObservableCollection<Book> _books;
-        public ObservableCollection<Book> Books
+        private ObservableCollection<Models.Project> _projects;
+        public ObservableCollection<Models.Project> Projects
         {
-            get { return _books; }
-            set { SetProperty(ref _books, value); }
+            get { return _projects; }
+            set { SetProperty(ref _projects, value); }
         }
+
+        private readonly INavigationService _navigationService;
 
         public ProjectsViewModel()
         {
-            Books = new ObservableCollection<Book>();
+            _navigationService = App.NavigationService;
 
-            BookData _context = new BookData();
-            _context.Books.ToList().ForEach(Books.Add);
+            Projects = new ObservableCollection<Models.Project>();
+
+            ProjectData _context = new ProjectData();
+            _context.Projects.ToList().ForEach(Projects.Add);
+
+            GoToProjectCommand = new Command<Models.Project>(async (p) => await GoToProjectExecute(p));
         }
 
+        public ICommand GoToProjectCommand { get; private set; }
+
+        private async Task GoToProjectExecute(Models.Project project)
+        {
+            if (project != null)
+            {
+                await _navigationService.NavigateAsync(AppConstants.ProjectPage, project);
+            }
+        }
     }
 }

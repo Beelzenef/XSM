@@ -3,14 +3,14 @@ using XSM.Models;
 
 namespace XSM.Data
 {
-    class BookData
+    class ProjectData
     {
-        public List<Book> Books = new List<Book>
+        public List<Project> Projects = new List<Project>
         {
-            new Book { Title = "Eragon", Author = "C. Paolini" },
-            new Book { Title = "La sombra del viento", Author = "C. Ruiz Zafón" },
-            new Book { Title = "Sesión nocturna", Author = "M. Connelly" },
-            new Book { Title = "Ciudad de huesos", Author = "M. Connelly" }
+            new Project { Title = "Eragon", Genre = "Fantasy" },
+            new Project { Title = "La sombra del viento", Genre = "Suspense" },
+            new Project { Title = "Sesión nocturna", Genre = "Noire" },
+            new Project { Title = "Ciudad de huesos", Genre = "Noire" }
         };
     }
 }
