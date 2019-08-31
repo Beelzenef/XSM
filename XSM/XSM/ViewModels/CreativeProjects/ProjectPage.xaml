@@ -15,7 +15,7 @@
                 <Label Text="Genre:" FontAttributes="Bold"/>
                 <Label Text="{Binding Project.Genre}"/>
             </StackLayout>
-            <!--<Button Text="BACK" Command="{Binding BackToProjectsCommand}"/>-->
+            <Button Text="BACK" Command="{Binding BackToProjectsCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

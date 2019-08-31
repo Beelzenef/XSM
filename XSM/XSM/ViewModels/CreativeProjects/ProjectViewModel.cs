@@ -19,16 +19,20 @@ namespace XSM.ViewModels.Project
 
         private readonly INavigationService _navigationService;
 
-        public ProjectViewModel()
+        public ProjectViewModel() { }
+        public ProjectViewModel(Models.Project project)
         {
+            Project = project;
             _navigationService = App.NavigationService;
+
+            LoadData();
 
             BackToProjectsCommand = new Command(async () => await BackToProjectsExecute());
         }
 
-        public ProjectViewModel(Models.Project project)
+        private void LoadData()
         {
-            Project = project;
+            System.Diagnostics.Debug.WriteLine("Loading characters data");
         }
 
         private async Task BackToProjectsExecute()

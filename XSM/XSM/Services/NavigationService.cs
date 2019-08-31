@@ -104,7 +104,6 @@ namespace XSM.Services
 
         private Page GetPage(string pageKey, object parameter = null)
         {
-
             lock (_sync)
             {
                 if (!_pagesByKey.ContainsKey(pageKey))
@@ -123,9 +122,7 @@ namespace XSM.Services
                         .DeclaredConstructors
                         .FirstOrDefault(c => !c.GetParameters().Any());
 
-                    parameters = new object[]
-                    {
-                    };
+                    parameters = new object[] { };
                 }
                 else
                 {
@@ -139,10 +136,7 @@ namespace XSM.Services
                                        && p[0].ParameterType == parameter.GetType();
                             });
 
-                    parameters = new[]
-                    {
-                    parameter
-                };
+                    parameters = new[] { parameter };
                 }
 
                 if (constructor == null)
