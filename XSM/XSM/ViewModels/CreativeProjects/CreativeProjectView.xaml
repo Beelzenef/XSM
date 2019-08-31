@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:XSM.ViewModels.Project"
-             x:Class="XSM.ViewModels.Project.ProjectPage">
+             xmlns:vm="clr-namespace:XSM.ViewModels.CreativeProjects"
+             x:Class="XSM.ViewModels.CreativeProjects.CreativeProjectView">
     <ContentPage.BindingContext>
-        <vm:ProjectViewModel />
+        <vm:CreativeProjectViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>

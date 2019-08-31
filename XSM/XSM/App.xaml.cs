@@ -1,9 +1,9 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XSM.Services;
+using XSM.ViewModels.CreativeProjects;
 using XSM.ViewModels.Login;
-using XSM.ViewModels.Project;
-using XSM.ViewModels.Projects;
+using XSM.ViewModels.ProjectList;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace XSM
@@ -21,9 +21,9 @@ namespace XSM
 
         private Page SetNavigations()
         {
-            NavigationService.Configure(AppConstants.LoginPage, typeof(LoginPage));
-            NavigationService.Configure(AppConstants.ProjectsPage, typeof(ProjectsPage));
-            NavigationService.Configure(AppConstants.ProjectPage, typeof(ProjectPage));
+            NavigationService.Configure(AppConstants.LoginPage, typeof(LoginView));
+            NavigationService.Configure(AppConstants.ProjectsPage, typeof(ProjectListView));
+            NavigationService.Configure(AppConstants.ProjectPage, typeof(CreativeProjectView));
             var mainPage = ((NavigationService)NavigationService).SetRootPage(AppConstants.LoginPage);
 
             return mainPage;

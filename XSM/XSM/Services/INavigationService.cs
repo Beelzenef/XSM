@@ -14,5 +14,8 @@ namespace XSM.Services
         Task NavigateAsync(string pageKey, bool animated = true);
         Task NavigateAsync(string pageKey, object parameter, bool animated = true);
 
+        Task DisplayAlertConfirm(string msg);
+        Task<bool> DisplayAlertYesNo(string msg);
+
     }
 }

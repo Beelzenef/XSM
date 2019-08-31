@@ -5,12 +5,12 @@ namespace XSM.Data
 {
     class ProjectData
     {
-        public List<Project> Projects = new List<Project>
+        public List<CreativeProject> Projects = new List<CreativeProject>
         {
-            new Project { Title = "Eragon", Genre = "Fantasy" },
-            new Project { Title = "La sombra del viento", Genre = "Suspense" },
-            new Project { Title = "Sesión nocturna", Genre = "Noire" },
-            new Project { Title = "Ciudad de huesos", Genre = "Noire" }
+            new CreativeProject { Title = "Eragon", Genre = "Fantasy" },
+            new CreativeProject { Title = "La sombra del viento", Genre = "Suspense" },
+            new CreativeProject { Title = "Sesión nocturna", Genre = "Noire" },
+            new CreativeProject { Title = "Ciudad de huesos", Genre = "Noire" }
         };
     }
 }

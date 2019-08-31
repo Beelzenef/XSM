@@ -149,5 +149,15 @@ namespace XSM.Services
                 return page;
             }
         }
+
+        public async Task DisplayAlertConfirm(string msg)
+        {
+            await CurrentNavigationPage.DisplayAlert("Alert", msg, "OK");
+        }
+
+        public async Task<bool> DisplayAlertYesNo(string msg)
+        {
+            return await CurrentNavigationPage.DisplayAlert("Alert", msg, "Yes", "No");
+        }
     }
 }

@@ -13,7 +13,7 @@
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\Projects\" />
+    <Folder Include="ViewModels\ProjectList\" />
     <Folder Include="ViewModels\Login\" />
     <Folder Include="ViewModels\Base\" />
     <Folder Include="Services\" />

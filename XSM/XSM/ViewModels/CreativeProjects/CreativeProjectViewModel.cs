@@ -1,15 +1,14 @@
 ﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-using XSM.Services;
 using XSM.ViewModels.Base;
 
-namespace XSM.ViewModels.Project
+namespace XSM.ViewModels.CreativeProjects
 {
-    public class ProjectViewModel : BaseViewModel
+    public class CreativeProjectViewModel : BaseViewModel
     {
-        private Models.Project _project;
-        public Models.Project Project
+        private Models.CreativeProject _project;
+        public Models.CreativeProject Project
         {
             get { return _project; }
             set { SetProperty(ref _project, value); }
@@ -17,13 +16,10 @@ namespace XSM.ViewModels.Project
 
         public ICommand BackToProjectsCommand { get; private set; }
 
-        private readonly INavigationService _navigationService;
-
-        public ProjectViewModel() { }
-        public ProjectViewModel(Models.Project project)
+        public CreativeProjectViewModel() { }
+        public CreativeProjectViewModel(Models.CreativeProject project)
         {
             Project = project;
-            _navigationService = App.NavigationService;
 
             LoadData();
 

@@ -1,12 +1,12 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XSM.ViewModels.Projects
+namespace XSM.ViewModels.ProjectList
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProjectsPage : ContentPage
+    public partial class ProjectListView : ContentPage
     {
-        public ProjectsPage()
+        public ProjectListView()
         {
             InitializeComponent();
         }

@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-using XSM.Services;
 using XSM.ViewModels.Base;
 
 namespace XSM.ViewModels.Login
@@ -24,11 +23,8 @@ namespace XSM.ViewModels.Login
 
         public ICommand LoginCommand { get; private set; }
 
-        private INavigationService _navigationService;
-
         public LoginViewModel()
         {
-            _navigationService = App.NavigationService;
             LoginCommand = new Command(async () => await LoginExecute());
         }
 
