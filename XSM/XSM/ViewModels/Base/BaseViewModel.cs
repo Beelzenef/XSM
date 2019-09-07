@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using XSM.Services;
+using XSM.Services.Navigation;
 
 namespace XSM.ViewModels.Base
 {

@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XSM.Services;
+using XSM.Services.Navigation;
 using XSM.ViewModels.CreativeProjects;
 using XSM.ViewModels.Login;
 using XSM.ViewModels.ProjectList;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace XSM.Services
+namespace XSM.Services.Navigation
 {
     public interface INavigationService
     {

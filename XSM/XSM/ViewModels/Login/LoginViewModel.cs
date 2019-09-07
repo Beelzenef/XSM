@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using XSM.Services.Users;
 using XSM.ViewModels.Base;
 
 namespace XSM.ViewModels.Login
@@ -23,14 +24,27 @@ namespace XSM.ViewModels.Login
 
         public ICommand LoginCommand { get; private set; }
 
+        private readonly IUserService _userService;
+
         public LoginViewModel()
         {
             LoginCommand = new Command(async () => await LoginExecute());
+
+            _userService = new UserService();
         }
 
         private async Task LoginExecute()
         {
-            await _navigationService.NavigateAsync(AppConstants.ProjectsPage);
+            bool validCredentials = _userService.CheckUserData(Username, Password);
+
+            if (validCredentials)
+            {
+                await _navigationService.NavigateAsync(AppConstants.ProjectsPage);
+            }
+            else
+            {
+                await _navigationService.DisplayAlertConfirm("Invalid credentials");
+            }
         }
     }
 }

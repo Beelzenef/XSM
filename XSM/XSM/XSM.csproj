@@ -19,5 +19,7 @@
     <Folder Include="Services\" />
     <Folder Include="ViewModels\CreativeProjects\" />
     <Folder Include="Views\" />
+    <Folder Include="Services\Navigation\" />
+    <Folder Include="Services\Users\" />
   </ItemGroup>
 </Project>
