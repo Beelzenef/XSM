@@ -7,10 +7,30 @@ namespace XSM.Data
     {
         public List<CreativeProject> Projects = new List<CreativeProject>
         {
-            new CreativeProject { Title = "Eragon", Genre = "Fantasy" },
-            new CreativeProject { Title = "La sombra del viento", Genre = "Suspense" },
-            new CreativeProject { Title = "Sesión nocturna", Genre = "Noire" },
-            new CreativeProject { Title = "Ciudad de huesos", Genre = "Noire" }
+            new CreativeProject
+            {
+                Id = 1,
+                Title = "Eragon",
+                Genre = "Fantasy"
+            },
+            new CreativeProject
+            {
+                Id = 2,
+                Title = "La sombra del viento",
+                Genre = "Suspense"
+            },
+            new CreativeProject
+            {
+                Id = 3,
+                Title = "Sesión nocturna",
+                Genre = "Noire"
+            },
+            new CreativeProject
+            {
+                Id = 4,
+                Title = "Ciudad de huesos",
+                Genre = "Noire"
+            }
         };
     }
 }

@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:XSM.ViewModels.CreativeProjects"
+             xmlns:views="clr-namespace:XSM.Views"
+             x:Name="this"
              x:Class="XSM.ViewModels.CreativeProjects.CreativeProjectView">
     <ContentPage.BindingContext>
         <vm:CreativeProjectViewModel />
@@ -9,12 +11,43 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand">
+                         VerticalOptions="CenterAndExpand"
+                         Orientation="Horizontal">
                 <Label Text="Title:" FontAttributes="Bold"/>
                 <Label Text="{Binding Project.Title}"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center"
+                         VerticalOptions="CenterAndExpand"
+                         Orientation="Horizontal">
                 <Label Text="Genre:" FontAttributes="Bold"/>
                 <Label Text="{Binding Project.Genre}"/>
             </StackLayout>
+            <ListView ItemsSource="{Binding Characters}"
+                      BackgroundColor="White"
+                      SeparatorVisibility="Default"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <views:BaseViewCell x:Name="cell"
+                            ParentContext="{Binding BindingContext,
+                            Source={x:Reference this}}">
+                            <StackLayout Margin="6,4"
+                                         BackgroundColor="GhostWhite">
+                                <Label Text="{Binding Name}"
+                                       Margin="8"
+                                       FontAttributes="Bold"
+                                       FontSize="Medium"/>
+                                <!--<Button Command="{Binding ParentContext.GoToProjectCommand,
+                                    Source={x:Reference cell}}"
+                                    CommandParameter="{Binding .}"
+                                    Text="Select"/>-->
+                            </StackLayout>
+                        </views:BaseViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Button Text="BACK" Command="{Binding BackToProjectsCommand}"/>
         </StackLayout>
     </ContentPage.Content>

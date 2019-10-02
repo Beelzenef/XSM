@@ -21,5 +21,6 @@
     <Folder Include="Views\" />
     <Folder Include="Services\Navigation\" />
     <Folder Include="Services\Users\" />
+    <Folder Include="Services\Characters\" />
   </ItemGroup>
 </Project>
